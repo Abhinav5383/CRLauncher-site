@@ -72,15 +72,11 @@ a {
 }
 
 .text-gradient {
-    /* background: hsl(var(--accent-foreground)); */
-
     background-clip: text;
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    --angle: 45deg;
-    background-image: linear-gradient(var(--angle), oklab(97.5% -0.006 -0.011), oklab(90.2% -0.018 -0.047), oklab(81% -0.021 -0.071), oklab(68.4% -0.009 -0.105), oklab(60.5% -0.005 -0.147));
+    background-image: linear-gradient(45deg, oklab(97.5% -0.006 -0.011), oklab(90.2% -0.018 -0.047), oklab(81% -0.021 -0.071), oklab(68.4% -0.009 -0.105), oklab(60.5% -0.005 -0.147));
 }
 
 .underline {
@@ -92,6 +88,52 @@ a {
 
 .underline:hover {
     text-decoration-color: hsl(var(--muted-foreground));
+}
+
+.github-octo:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}
+
+@media (max-width:500px) {
+    .github-octo .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+
+    .github-octo:hover .octo-arm {
+        animation: none
+    }
+}
+
+/* Element styles */
+
+.fixed__github-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.fixed__github-link svg {
+    width: 5rem;
+    height: 5rem;
 }
 
 .hero-section {
