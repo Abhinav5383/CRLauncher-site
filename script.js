@@ -60,7 +60,7 @@ function getFileName(os) {
 		case "linux":
 			return "CRLauncher.jar";
 
-		case "macos":
+		case "mac":
 			return "CRLauncher.zip";
 	}
 }
